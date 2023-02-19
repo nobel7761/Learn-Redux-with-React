@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import Counter from "./components/Counter";
 import Stats from "./components/Stats";
@@ -13,7 +14,7 @@ const initialState = [
   },
 ];
 
-export default function App() {
+const App = () => {
   const [state, setState] = useState(initialState);
 
   const totalCount = state.reduce((total, counter) => total + counter.count, 0);
@@ -26,7 +27,6 @@ export default function App() {
           count: counter.count + 1,
         };
       }
-
       return { ...counter };
     });
 
@@ -41,7 +41,6 @@ export default function App() {
           count: counter.count - 1,
         };
       }
-
       return { ...counter };
     });
 
@@ -53,15 +52,14 @@ export default function App() {
       <h1 class="max-w-md mx-auto text-center text-2xl font-bold">
         Simple Counter Application
       </h1>
-
       <div class="max-w-md mx-auto mt-10 space-y-5">
         {state.map((counter) => (
           <Counter
             key={counter.id}
             id={counter.id}
             count={counter.count}
-            increment={increment}
-            decrement={decrement}
+            incrementHandler={() => increment(counter.id)}
+            decrementHandler={() => decrement(counter.id)}
           />
         ))}
 
@@ -69,4 +67,6 @@ export default function App() {
       </div>
     </div>
   );
-}
+};
+
+export default App;
