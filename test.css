@@ -1,0 +1,9 @@
+.component {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.component > * {
+  margin-right: 10px;
+}
