@@ -1,2 +1,2 @@
-export const DINCREMENET = "dynamicCounter/increment";
+export const DINCREMENT = "dynamicCounter/increment";
 export const DDECREMENT = "dynamicCounter/decrement";
