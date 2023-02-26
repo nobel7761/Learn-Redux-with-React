@@ -28,7 +28,7 @@ const mapStateToProps = (state, ownProps) => {
   //! এখানে state টা মূলত react-redux ই এনে দিচ্ছে।
   console.log(ownProps);
   return {
-    countValue: state.value, //! এখানে countValue এর নাম নিজের ইচ্ছামত দিতে পারবো। এই একই নামটা আমরা মূলত props আকারে যেই component টা connect function এর সাথে দিয়েছি সেখানে পাঠাবো।
+    countValue: state.counterReducer.value, //! এখানে countValue এর নাম নিজের ইচ্ছামত দিতে পারবো। এই একই নামটা আমরা মূলত props আকারে যেই component টা connect function এর সাথে দিয়েছি সেখানে পাঠাবো।
   };
 };
 
